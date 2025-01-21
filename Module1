@@ -1,1 +1,64 @@
-
+# This is a program to store new vehicle inventory and assist with monthly payments
+# Create variable of your favorite car brand (e.g., brand = 'RAM'
+brand = "Ford"
+print(brand)
+# Create list of 5 of their models from cheapest to most expensive
+ford_models = ['f150', 'bronco', 'explorer', 'mustang', 'ranger']
+print(ford_models)
+# Append a 6th model to the list
+ford_models.append('maverick')
+print(ford_models)
+# Create list of 5 standard colors for all models
+standard_colors = ['blue', 'red', 'white', 'black', 'yellow']
+print(standard_colors)
+# Replace your last color with a different color
+standard_colors[4] = 'grey'
+print(standard_colors)
+# Create variable of the current year (e.g., YEAR = '2026')
+YEAR = '2025'
+print(YEAR)
+# Create MSRP constant number (not string) of each of the models (e.g., MSRP_1500Truck = 33000)
+MSRP_f150 = 48000
+MSRP_bronco = 47000
+MSRP_explorer = 40000
+MSRP_mustang = 33000
+MSRP_ranger = 32000
+MSRP_maverick = 30000
+print (MSRP_f150, MSRP_bronco, MSRP_explorer, MSRP_mustang, MSRP_ranger, MSRP_maverick)
+# Create a constant number (not string) for total months in 4yr, 5yr, and 6yr loans (e.g., 4yr, = 48, 6yr = 72
+Months_4yr = '48'
+Months_5yr = '60'
+Months_6yr = '72'
+print(Months_4yr, Months_5yr, Months_6yr)
+# Create a variable for the guest's name. Be courteous in your upcoming messages :)
+guest_name = 'Elliot'
+# Create message variable (with f-string) welcoming customer to your new car store
+welcome_message = f"Hello {guest_name}, welcome to CarsAreUs where Ford's are sold!"
+# Create awesome banner with your brand/name/dealership, however you want to welcome customers
+brand_name = 'Ford'
+store_name = 'CarsAreUs'
+dealership_name = 'Ford Motor Vehicles'
+# Print awesome banner and welcome message
+print(brand_name)
+print (store_name)
+print(dealership_name)
+print(welcome_message)
+# Using title methods, print the vehicles in alphabetical order, with the year and available colors.
+print(f"{ford_models} {standard_colors} {YEAR}")
+# Create a variable that calculates a monthly payment (no interest) for 5yr/60months for the first vehicle. Do not let more than two decimals to occur.
+paymentf150_5yr = (48000/60)
+print(paymentf150_5yr)
+# and print that in a nice, kind message. Don't be rude/pushy to the customer :)
+print(f"{paymentf150_5yr} is what it will cost per month for this vehicle.")
+# Do the same thing, but give them 4yr and 6yr options for the same vehicle
+paymentf150_4yr = (48000/48)
+print(f"{paymentf150_4yr} is what it will cost per month for this vehicle.")
+paymentf150_6yr = round(48000/72)
+print(f"{paymentf150_6yr} is what it will cost per month for this vehicle.")
+# Lastly, give them a 5yr option for each of the other vehicles, just to see if they are interested
+paymentbronco_5yr = round(47000/60)
+paymentexplorer_5yr = round(40000/60)
+paymentmustang_5yr = round(33000/60)
+paymentranger_5yr = round(32000/60)
+paymentmaverick_5yr = (30000/60)
+print(paymentbronco_5yr, paymentexplorer_5yr, paymentmustang_5yr, paymentranger_5yr, paymentmaverick_5yr)
