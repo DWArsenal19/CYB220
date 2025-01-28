@@ -1,0 +1,228 @@
+pizzas = ['cheese', 'pepperoni', 'hawaiian']
+for pizza in pizzas:
+    print(pizza.title())
+for pizza in pizzas:
+    print(f"I like {pizza} pizza!")
+print("I really love pizza!")
+
+animals = ['lizard', 'snake', 'alligator']
+for animal in animals:
+    print(animal.title())
+for animal in animals:
+    print(f"{animal.title()} is a type of reptile.")
+print("I think all of these reptiles are super cool!")
+
+for value in range(1, 21):
+    print(value)
+
+numbers = list(range(1,1000001))
+for number in numbers:
+    print(number)
+
+print(min(numbers))
+print(max(numbers))
+print(sum(numbers))
+
+odd_numbers = list(range(1, 21, 2))
+for odd_number in odd_numbers:
+    print(odd_number)
+
+threes = list(range(3, 31, 3))
+for three in threes:
+    print(three)
+
+for value in range(1, 11):
+    cube = value ** 3
+    print(cube)
+
+cubes = []
+for value in range(1,11):
+    cube = value ** 3
+    cubes.append(cube)
+print(cubes)
+
+runners = ['elliot', 'jake', 'adam', 'spain', 'noah', 'dylan', 'ty']
+print(f"The first three items in the list are: {runners[0:3]}")
+print(f"Three items from the middle of the list are: {runners[2:5]}")
+print(f"The last three items in the list are: {runners[4:7]}")
+
+friend_pizzas = pizzas[:]
+print(friend_pizzas)
+pizzas.append('veggie')
+print(pizzas)
+friend_pizzas.append('meatlovers')
+print(friend_pizzas)
+for pizzas in pizzas:
+    print(f"My favorite pizzas are: {pizzas}")
+for friend_pizzas in friend_pizzas:
+    print(f"My friends favorite pizzas are: {friend_pizzas}")
+
+my_foods = ['pizza', 'falafel', 'carrot cake']
+friends_foods = my_foods[:]
+for my_foods in my_foods:
+    print(my_foods)
+friends_foods.append('ice cream')
+for friends_foods in friends_foods:
+    print(friends_foods)
+
+buffet_foods = ('fries', 'salad', 'bread', 'chicken', 'turkey')
+for buffet_foods in buffet_foods:
+    print(buffet_foods)
+buffet_foods = ('fries', 'chips', 'bread', 'chicken', 'ham')
+for buffet_foods in buffet_foods:
+    print(buffet_foods)
+
+
+shoe = 'nike'
+print("Is shoe == 'nike'? I predict True.")
+print(shoe == 'nike')
+print("Is shoe == 'addidas'? I predict False.")
+print(shoe == 'addidas')
+print("Is shoe == 'Nike'? I predict False.")
+print(shoe == 'Nike')
+print("Is shoe.higher() == 'nike'? I predict False.")
+print(shoe.upper() == 'nike')
+print("Is shoe.lower() == 'nike'? I predict True.")
+print(shoe.lower() == 'nike')
+print("Is shoe == 'nike'? I predict True.")
+print(shoe == 'nike')
+print("Is shoe == 'puma'? I predict False.")
+print(shoe == 'puma')
+print("Is shoe != 'nike'? I predict False.")
+print(shoe != 'nike')
+print("Is shoe != 'saucony'? I predict True.")
+print(shoe != 'saucony')
+print("Is shoe != 'asics'? I predict True.")
+print(shoe != 'asics')
+
+if shoe == 'nike':
+    print("Yay nike!")
+print("Is shoe == 'asics'? I predict False.")
+print(shoe == 'asics')
+if shoe != 'new balance':
+    print("I don't like new balance!")
+print("Is shoe != 'nike'? I predict False.")
+print(shoe != 'nike')
+
+shoe = 'Nike'
+print("Is shoe.lower() == 'nike'? I predict True.")
+print(shoe.lower() == 'nike')
+print("Is shoe == 'nike'? I predict False.")
+print(shoe == 'nike')
+
+age = 22
+print(age != 25)
+print(age > 18)
+print(age < 18)
+print(age >= 22)
+print(age <= 15)
+
+age_0 = 25
+age_1 = 20
+print(age_0 <= 30 and age_1 >= 18)
+print(age_0 <= 30 and age_1 >= 23)
+print(age_0 <= 30 or age_1 >= 23)
+print(age_0 <= 24 and age_1 >= 23)
+
+pets = ['dog', 'cat', 'hamster']
+print('cat' in pets)
+print('snake' in pets)
+
+alien_color = 'green'
+if alien_color == 'green':
+    print("You have just earned 5 points!")
+alien_color = 'red'
+if alien_color == 'green':
+    print("You have just earned 5 points!")
+
+alien_color = 'green'
+if alien_color == 'green':
+    print("You have just earned 5 points!")
+else:
+    print("You have just earned 10 points!")
+alien_color = 'red'
+if alien_color == 'green':
+    print("You have just earned 5 points!")
+else:
+    print("You have just earned 10 points!")
+
+alien_color = 'green'
+if alien_color == 'green':
+    print("You have just earned 5 points!")
+elif alien_color == 'yellow':
+    print("You have just earned 10 points!")
+else:
+    print("You have just earned 15 points!")
+alien_color = 'yellow'
+if alien_color == 'green':
+    print("You have just earned 5 points!")
+elif alien_color == 'yellow':
+    print("You have just earned 10 points!")
+else:
+    print("You have just earned 15 points!")
+alien_color = 'red'
+if alien_color == 'green':
+    print("You have just earned 5 points!")
+elif alien_color == 'yellow':
+    print("You have just earned 10 points!")
+else:
+    print("You have just earned 15 points!")
+
+age = 22
+if age < 2:
+    print("You are a baby.")
+elif age < 4:
+    print("You are a toddler.")
+elif age < 13:
+    print("You are a kid.")
+elif age < 20:
+    print("You are a teenager.")
+elif age < 65:
+    print("You are an adult.")
+else:
+    print("You are an elder.")
+
+favorite_fruits = ['apple', 'strawberry', 'grape']
+if 'apple' in favorite_fruits:
+    print("I love eating apple!")
+if 'strawberry' in favorite_fruits:
+    print("I love eating strawberry!")
+if 'banana' in favorite_fruits:
+    print("I love eating banana!")
+if 'grape' in favorite_fruits:
+    print("I love eating grape!")
+if 'blueberry' in favorite_fruits:
+    print("I love eating blueberry!")
+
+usernames = ['admin', 'david', 'root', 'user', 'williams']
+for usernames in usernames:
+    if usernames == 'admin':
+        print(f"Hello {usernames}, would you like to see a status report?")
+    else:
+        print(f"Hello {usernames}, thank you for logging in again.")
+
+usernames = []
+if usernames:
+    for usernames in usernames:
+        print('Hello {usernames}')
+else:
+    print("We need to find some users!")
+
+current_users = ['jack', 'jim', 'bob', 'james', 'tom']
+new_users = ['charlie', 'jack', 'rylie', 'james', 'kate']
+for new_users in new_users:
+    if new_users in current_users:
+        print("Username already taken!")
+    else:
+        print("Username is available!")
+
+ordinal_numbers = list(range(1, 10))
+for ordinal_numbers in ordinal_numbers:
+    if ordinal_numbers == 1:
+        print(f"{ordinal_numbers}st")
+    elif ordinal_numbers == 2:
+        print(f"{ordinal_numbers}nd")
+    elif ordinal_numbers == 3:
+        print(f"{ordinal_numbers}rd")
+    else:
+        print(f"{ordinal_numbers}th")
