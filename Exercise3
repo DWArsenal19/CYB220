@@ -1,0 +1,182 @@
+user_info = {
+    'f_name': 'david',
+    'l_name': 'williams',
+    'hometown': 'irmo',
+    'current city': 'anderson',
+    'user_name': 'dwilliams',
+}
+print(user_info)
+print(user_info['f_name'])
+print(user_info['l_name'])
+print(user_info['hometown'])
+print(user_info['current city'])
+print(user_info['user_name'])
+
+first_name = user_info['f_name']
+last_name = user_info['l_name']
+usr_name = user_info['user_name']
+print(f"This person's first name is {first_name.title()}, last name is {last_name.title()}, and their username is {usr_name}")
+hometown_name = user_info['hometown']
+print(f"For security reasons, we might ask them for their hometown, which is {hometown_name.title()}")
+
+definitions = {
+    'python': 'a high-level general-purpose programming language',
+    'variable': 'labels that you can assign to values',
+    'list': 'a collection of items',
+    'method': 'an action python performs on a piece of data',
+    'if statement': 'allows python to perform an action if something is true',
+    'dictionary': 'a collection of key-value pairs',
+    'function': 'a block of reusable code '
+}
+python_name = definitions['python']
+variable_name = definitions['variable']
+list_name = definitions['list']
+method_name = definitions['method']
+if_statement_name = definitions['if statement']
+dictionary_name = definitions['dictionary']
+function_name = definitions['function']
+print(f"Python: {python_name}")
+print(f"Variable: {variable_name}")
+print(f"List: {list_name}")
+print(f"Method: {method_name}")
+print(f"If Statement: {if_statement_name}")
+print(f"Dictionary: {dictionary_name}")
+print(f"Function: {function_name}")
+
+for key, value in definitions.items():
+    print(f"\nKey: {key}")
+    print(f"Value: {value}")
+
+counties = {
+    'Richland County': 'Columbia',
+    'Lexington County': 'Lexington',
+    'Oconee County': 'Walhalla',
+    'Williamsburg County': 'Kingstree',
+    'Kershaw County': 'Camden',
+    'Greenville County': 'Greenville',
+}
+print(counties)
+
+counties = {
+    'Richland County': 'Columbia',
+    'Lexington County': 'Lexington',
+    'Oconee County': 'Walhalla',
+    'Williamsburg County': 'Kingstree',
+    'Kershaw County': 'Camden',
+    'Greenville County': 'Greenville',
+    'Marlboro County': 'Bennettsville',
+    'Laurens County': 'Laurens',
+    'Fairfield County': 'Winnsboro',
+    'Dorchester County': 'St. George',
+}
+county_name = ['Richland County', 'Lexington County', 'Oconee County', 'Williamsburg County', 'Kershaw County', 'Greenville County', 'Marlboro County', 'Laurens County', 'Fairfield County', 'Dorchester County']
+for county in counties.keys():
+
+    if county in county_name:
+        county_capital = counties[county]
+        print(f"{county} is in our dictionary, and the capital/seat is {county_capital}")
+    else:
+        print(f"{county} is not in our dictionary. WE will add this county shortly. Thanks!")
+
+counties_population = {
+    'richland_county': {
+        'Blythewood': 6267,
+        'Irmo': 12033,
+        'Columbia': 142416,
+        'Cayce': 13660,
+        'Forest Acres': 10376
+    },
+    'fairfield_county': {
+        'Winnsboro': 3264,
+        'Ridgeway': 256,
+        'Jenkinsville': 40,
+        'Monticello-Salem': 145,
+        'Winnsboro-North': 3141
+    },
+    'dorchester_county': {
+        'St. George': 1834,
+        'North Charleston': 121469,
+        'Summerville': 51884,
+        'Ridgeville': 1629,
+        'Harleyville': 718
+    },
+    'oconee_county': {
+        'Walhalla': 4199,
+        'Seneca': 9043,
+        'Westminster': 2413,
+        'Fair Play': 574,
+        'Tamassee': 96
+    },
+    'marlboro_county': {
+        'Bennettsville': 6540,
+        'Mccoll': 1993,
+        'Blenheim': 110,
+        'Clio': 582,
+        'Tatum': 71
+    },
+}
+for city, population in counties_population.items():
+    city_population = counties_population[city]
+    print(f"In {city}, the current population is {city_population}")
+
+sc_counties = {
+    'richland county': ['Columbia', 'Cayce', 'Irmo'],
+    'dorchester county': ['North Charleston', 'Summerville', 'St. George'],
+    'oconee county': ['Seneca', 'Walhalla', 'Westminster']
+}
+for county, cities in sc_counties.items():
+    print(f"\nIn {county.title()} the largest cites are {cities}")
+
+message = input("What is your name? ")
+print(f"Welcome to AU, {message}!")
+
+money = input("How much money do you have?: ")
+money = int(money)
+if money <= 100:
+    print("\n You are not able to purchase any processor.")
+elif money <= 150:
+    print("\n You are able to purchase an i3 processor!")
+elif money <= 200:
+    print("\n You are able to purchase an i5 processor!")
+elif money <= 300:
+    print("\n You are able to purchase an i7 processor!")
+elif money <= 400:
+    print("\n You are able to purchase a i9 processor!")
+else:
+    print("\n You are able to purchase a processor!")
+
+number = input("Is this number even or odd?: ")
+number = int(number)
+if number % 2 == 0:
+    print(f"\nThe number {number} is even.")
+else:
+    print(f"\nThe number {number} is odd.")
+
+prompt = "\n Who is my favorite runner?:"
+prompt += "\n"
+runner = ""
+while True:
+    runner = input(prompt)
+    if runner == 'Mo Farah':
+        print('That is correct!')
+        break
+    else:
+        print(f"I do not think {runner} is best runner.")
+
+ubuntu_flavours = {
+    'elliot': 'Xubuntu',
+    'adam': 'Kubuntu',
+    'noah': 'Edubuntu',
+    'dylan': 'Ubuntu Kylin'
+}
+name = True
+while name:
+    flavours = input("\nWhat is one of the favorite flavours?: ")
+    response = input("\nFlavours: ")
+    ubuntu_flavours[flavours] = response
+    repeat = input("Would you like to respond")
+    if repeat == 'no':
+        name = False
+print("\n")
+for flavours, response in ubuntu_flavours.items():
+    print(f"{flavours} favorite flavour is {response}")
