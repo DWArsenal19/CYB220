@@ -1,0 +1,118 @@
+def make_shirt(shirt_size, shirt_text):
+    """Display information about a shirt."""
+    print(f"\nThe shirt size is {shirt_size}, and the shirt says {shirt_text} on it.")
+make_shirt('Medium','CYBER')
+
+def make_shirt(shirt_text, shirt_size='Large'):
+    """Display information about a shirt."""
+    print(f"\nThe shirt size is {shirt_size}, and the shirt says {shirt_text} on it.")
+make_shirt(shirt_text='I love Python')
+
+def make_shirt(shirt_size, shirt_text='I love Python'):
+    """Display information about a shirt."""
+    print(f"\nThe shirt size is {shirt_size}, and the shirt says {shirt_text} on it.")
+make_shirt(shirt_size='Large')
+make_shirt(shirt_size='Medium')
+
+def make_shirt(shirt_size, shirt_text='CYB220'):
+    """Display information about a shirt."""
+    print(f"\nThe shirt size is {shirt_size}, and the shirt says {shirt_text} on it.")
+make_shirt(shirt_size='Small')
+
+def describe_city(city_name, country_name='England'):
+    """Display city and country."""
+    print(f"\n{city_name} is in {country_name}")
+describe_city(city_name='London')
+describe_city(city_name='Manchester')
+describe_city(city_name='Anderson')
+
+def city_country(city, country):
+    """Return the city and country."""
+    country_city = f"\n{city}, {country}"
+    return country_city.title()
+cc = city_country('Paris', 'France')
+print(cc)
+cc = city_country('Berlin', 'Germany')
+print(cc)
+cc = city_country('Sydney', 'Australia')
+print(cc)
+
+def make_album(artist_name, album_title, song=None):
+    """Return a dictionary of information about an album"""
+    artist = {'name': artist_name, 'title': album_title}
+    if song:
+        artist['song'] = song
+    return artist
+while True:
+    print("\nPlease tell me the artist name and album:")
+    print("(enter 'q at any time to quit)")
+    art_name = input("Artist Name: ")
+    if art_name == 'q':
+        break
+    alb_name = input("Album Name: ")
+    if alb_name == 'q':
+        break
+coldplay = make_album('Coldplay', 'Ghost Stories', 27)
+print(f"\nHello, {coldplay}")
+forrest_frank = make_album('Forrest Frank', 'Child of God', 27)
+print(f"\nHello, {forrest_frank}")
+post_malone = make_album('Post Malone', 'Austin', 17)
+print(f"\nHello, {post_malone}")
+
+def text_messages(messages):
+    """Print a simple text message."""
+    for message in messages:
+        print(message.title())
+show_messages = ['have a great day!', 'are you home yet?', 'thank you!']
+text_messages(show_messages)
+
+show_messages = ['have a great day!', 'are you home yet?', 'thank you!']
+sent_messages = []
+while show_messages:
+    send_messages = show_messages.pop()
+    print(f"Message: {send_messages.title()}")
+    sent_messages.append(send_messages)
+print("\nThe following messages have been printed:")
+for sent_message in sent_messages:
+    print(sent_message)
+
+def make_sandwich(*items):
+    """Summarize the sandwich we are about to make."""
+    print("\nMaking a sandwich with the following items:")
+    for item in items:
+        print(f"- {item}")
+make_sandwich('cheese')
+make_sandwich('lettuce', 'tomato')
+make_sandwich('onion', 'ham', 'chicken')
+
+def build_profile(first, last, **user_info):
+    """Build a dictionary containing some information about myself."""
+    user_info['first_name'] = first
+    user_info['last_name'] = last
+    return user_info
+user_profile = build_profile('david', 'williams',
+                             location='anderson',
+                             field='accounting')
+print(user_profile)
+
+def make_car(manufacturer, model, **car_info):
+    """Build a dictionary containing some information about a car."""
+    car_info['manufacturer_name'] = manufacturer
+    car_info['model_name'] = model
+    return car_info
+car = make_car('kia', 'optima',
+                              color='black',
+                              year=2012)
+print(car)
+
+import printing_functions
+printing_functions.show_messages('Thanks', 'I am not sure')
+
+def make_pizza(size, *topping):
+    """Summarize the pizza we are about to make."""
+    print(f"\nMaking a {size}-inch pizza with the following toppings:")
+    for topping in toppings:
+        print(f"- {tooping}")
+import pizza
+pizza.make_pizza(16, 'pepperoni')
+pizza.make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
