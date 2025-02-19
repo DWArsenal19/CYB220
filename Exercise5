@@ -1,0 +1,284 @@
+class Restaurant:
+    """A simple attempt to model a restaurant"""
+    def __init__(self, name, type):
+        self.restaurant_name = name
+        self.cuisine_type = type
+    def describe_restaurant(self):
+        print(f"This restaurant ({self.restaurant_name}) serves {self.cuisine_type}.")
+    def open_restaurant(self):
+        print(f"This restaurant ({self.restaurant_name}) is now OPEN!")
+anderson_restaurant = Restaurant('Wings and Fries', 'BBQ')
+anderson_restaurant.describe_restaurant()
+anderson_restaurant.open_restaurant()
+columbia_restaurant = Restaurant('Pizza Palace', 'pizza')
+columbia_restaurant.describe_restaurant()
+columbia_restaurant.open_restaurant()
+lexington_restaurant = Restaurant('Waffles and Pancakes', 'breakfast')
+lexington_restaurant.describe_restaurant()
+lexington_restaurant.open_restaurant()
+
+class User:
+    """A simple attempt to model a user"""
+    def __init__(self, first_name, last_name, username, age, account_type):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.username = username
+        self.age = age
+        self.account_type = account_type
+    def describe_user(self):
+        print("See your profile details below.")
+        print(f"NAME: {self.first_name} {self.last_name}")
+        print(f"USERNAME: {self.username}")
+        print(f"ACCOUNT TYPE: {self.account_type}")
+    def greet_user(self):
+        print(f"Hi, {self.first_name}!")
+user1 = User("David", "Williams", "dwilliams", 22, "admin")
+user1.describe_user()
+user1.greet_user()
+
+class Restaurant:
+    """A simple attempt to model a restaurant"""
+    def __init__(self, name, type):
+        self.restaurant_name = name
+        self.cuisine_type = type
+        self.number_served = 0
+    def describe_restaurant(self):
+        print(f"This restaurant ({self.restaurant_name}) serves {self.cuisine_type}.")
+    def served_customers(self):
+        print(f"This restaurant served {self.number_served} people today!")
+    def open_restaurant(self):
+        print(f"This restaurant ({self.restaurant_name}) is now OPEN!")
+    def set_number_served(self, number):
+        self.number_served = number
+    def increment_number_served(self, number):
+        self.number_served += abs(number)
+anderson_restaurant = Restaurant('Wings and Fries', 'BBQ')
+anderson_restaurant.describe_restaurant()
+anderson_restaurant.open_restaurant()
+anderson_restaurant.set_number_served(10)
+anderson_restaurant.served_customers()
+columbia_restaurant = Restaurant('Pizza Palace', 'pizza')
+columbia_restaurant.describe_restaurant()
+columbia_restaurant.open_restaurant()
+columbia_restaurant.served_customers()
+lexington_restaurant = Restaurant('Waffles and Pancakes', 'breakfast')
+lexington_restaurant.describe_restaurant()
+lexington_restaurant.open_restaurant()
+lexington_restaurant.set_number_served(20)
+lexington_restaurant.served_customers()
+
+class IceCreamStand(Restaurant):
+    def __init__(self, name, type,):
+        super().__init__(name, type)
+    def display_flavors(self, flavors):
+        print(f"Here are the flavors:")
+        for flavor in flavors:
+            print(flavor)
+oconee_restaurant = IceCreamStand("Tastee Freeze", "Ice Cream")
+oconee_restaurant.describe_restaurant()
+oconee_restaurant.open_restaurant()
+
+from pathlib import Path
+path = Path('learning_python.txt')
+contents = path.read_text()
+print(contents)
+lines = contents.splitlines()
+for line in lines:
+    print(line)
+
+from pathlib import Path
+path = Path('learning_python.txt')
+contents = path.read_text()
+print(contents.replace('Python', 'C'))
+
+from pathlib import Path
+path = Path('learning_python.txt')
+contents = path.read_text()
+print(contents)
+for line in contents.splitlines():
+    print(line)
+
+from random import choice
+list = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'a', 'b', 'c', 'd', 'e']
+first = choice(list)
+second = choice(list)
+third = choice(list)
+fourth = choice(list)
+winning_number = first+second+third+fourth
+print(f"\nAnybody who has this combo is the winner!: {winning_number}")
+
+filename ='guests.txt'
+name = input("Enter your name: ")
+with open(filename, 'a') as file:
+    file.write(f"{name}\n")
+
+filename ='guests_books.txt'
+name = input("Enter your name: ")
+with open(filename, 'a') as file:
+    while name == 'Noah':
+        name = input(filename)
+    file.write(f"{name}\n")
+
+print("Give me two numbers, and I'll add them.")
+print("Enter 'q' to quit.")
+
+try:
+    print(abc+10)
+except NameError:
+    print("You can only add numbers!")
+
+while True:
+    first_number = input("\nFirst number: ")
+    if first_number == 'q':
+        break
+    second_number = input("Second number: ")
+    if second_number == 'q':
+        break
+    answer = int(first_number) + int(second_number)
+    print(answer)
+
+catfile = 'cats.txt'
+dogfile = 'dogs.txt'
+files = [catfile, dogfile]
+for file in files:
+    try:
+        with open(file) as f:
+            contents = f.read()
+    except FileNotFoundError:
+        print(f"Come on... {file} is not there!")
+    else:
+        print(contents)
+
+from pathlib import Path
+def count_words(path):
+    try:
+        contents = path.read_text(encoding='utf-8')
+    except FileNotFoundError:
+        print(f"Sorry, the file {path} does not exist.")
+    else:
+        words = contents.split()
+        num_words = len(words)
+        print(f"The file {path} has about {num_words} words.")
+        contents.count('the ')
+        print(f"The word 'the' occurs {contents.count('the ')} times.")
+path = Path('Gutenberg')
+count_words(path)
+
+from pathlib import Path
+import json
+username = input("What is your favorite number? ")
+path = Path('username.json')
+contents = json.dumps(username)
+path.write_text(contents)
+print(f"I know your favorite number! It's {username}")
+
+from pathlib import Path
+import json
+def greet_user():
+    path = Path('username.json')
+    if path.exists():
+        contents = path.read_text()
+        username = json.loads(contents)
+        print(f"Welcome back, {username}!")
+    else:
+        username = input("What is your name? ")
+        contents = json.dumps(username)
+        path.write_text(contents)
+        print(f"We'll remember you when you come back, {username}!")
+greet_user()
+
+from pathlib import Path
+import json
+def get_stored_username(path):
+    if path.exists():
+        contents = path.read_text()
+        username = json.loads(contents)
+        return username
+    else:
+        return None
+def get_new_username(path):
+    """Prompt for a new username."""
+    username = input("What is your name? ")
+    contents = json.dumps(username)
+    path.write_text(contents)
+    return username
+def greet_user():
+    """Greet the user by name."""
+    path = Path('username.json')
+    username = get_stored_username(path)
+    if username:
+        print(f"Is this the correct username?: {username}")
+        print(f"Welcome back, {username}!")
+    else:
+        username = get_new_username(path)
+        print(f"We'll remember you when you come back, {username}!")
+greet_user()
+
+class Employee:
+    def __init__(self, first_name, last_name, salary):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.salary = salary
+    def give_raise(self):
+        self.salary = 5000
+        print(f"{self.salary} is the annual salary")
+
+class Die:
+    def __init__(self, sides):
+        self.sides = sides
+        self.sides = randint(1,6)
+        randint(1, 6)
+
+class User:
+    """A simple attempt to model a user"""
+    def __init__(self, first_name, last_name, username, age, account_type):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.username = username
+        self.age = age
+        self.account_type = account_type
+    def describe_user(self):
+        print("See your profile details below.")
+        print(f"NAME: {self.first_name} {self.last_name}")
+        print(f"USERNAME: {self.username}")
+        print(f"ACCOUNT TYPE: {self.account_type}")
+    def greet_user(self):
+        print(f"Hi, {self.first_name}!")
+user1 = User("David", "Williams", "dwilliams", 22, "admin")
+user1.describe_user()
+user1.greet_user()
+class Admin:
+    def __init__(self, first_name, last_name, username, age, account_type):
+        super().__init__(self, first_name, last_name, username, age, account_type)
+        privileges = ["can add post", "can delete post", "can ban user"]
+    def show_privileges(self, privileges):
+        print(f"The privileges are {privileges}.")
+my_user = Admin('Adam', 'Trusty', 'atrusty', 21, 'admin')
+print(my_user.describe_user())
+my_user.show_privileges()
+
+from restaurant import Restaurant
+my_new_restaurant = Restaurant('Wings and Fries', 'BBQ')
+print(my_new_restaurant.describe_restaurant())
+
+def get_city_cities(city, country):
+    city_name = f"{city} {country}"
+    return city_name.title()
+from city_functions import get_city_countries
+print("Enter 'q' at any time to quit.")
+while True:
+    city = input("\nPlease give me a city: ")
+    if first == 'q':
+        break
+    last = input("Please give me a country: ")
+    if last == 'q':
+        break
+    city_countries = get_city_countries(city, country)
+    print(f"\nFormatted city and country: {city_countries}")
+
+from employee import Employee
+def test_give_default_raise():
+    salary = "What is your salary?"
+    annual_salary = Employee(salary)
+    annual_salary.test_raise(5000)
+    assert 5000 in annual_salary_raise
