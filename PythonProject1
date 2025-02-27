@@ -1,0 +1,98 @@
+import random
+import pygame
+pygame.init()
+
+# game constants
+blue = (55, 118, 171)
+red = (155, 0, 54)
+tan = (255, 220, 153)
+white = (255, 255, 255)
+WIDTH = 800
+HEIGHT = 600
+
+#game variables
+score = 0
+player_x = 50
+player_y = 360
+y_change = 0
+gravity = 1
+x_change = 0
+hurdles = [350, 550, 750]
+hurdle_speed = 5
+active = False
+
+screen = pygame.display.set_mode([WIDTH, HEIGHT])
+pygame.display.set_caption('Hurdler')
+background = blue
+fps = 60
+font = pygame.font.Font('freesansbold.ttf', 20)
+timer = pygame.time.Clock()
+
+# Set dimensions for words and the characters.
+running = True
+while running:
+    timer.tick(fps)
+    screen.fill(background)
+    if not active:
+        instruction_text = font.render(f"Click Space Bar to Start!", True, white, blue)
+        screen.blit(instruction_text, (270, 100))
+    score_text = font.render(f"Score: {score}", True, white, blue)
+    screen.blit(score_text, (355, 50))
+    floor = pygame.draw.rect(screen, red, [0, 380, WIDTH, 220])
+    player = pygame.draw.rect(screen, tan, [player_x, player_y, 15, 30])
+    hurdle0 = pygame.draw.rect(screen, white, [hurdles[0], 345, 25, 35])
+    hurdle1 = pygame.draw.rect(screen, white, [hurdles[1], 345, 25, 35])
+    hurdle2 = pygame.draw.rect(screen, white, [hurdles[2], 345, 25, 35])
+
+# Create conditions to allow player to move right/left and to jump
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        if event.type == pygame.KEYDOWN and not active:
+            if event.key == pygame.K_SPACE:
+                hurdles = [350, 550, 750]
+                player_x = 50
+                score = 0
+                active = True
+        if event.type == pygame.KEYDOWN and active:
+            if event.key == pygame.K_SPACE and y_change == 0:
+                y_change = 18
+            if event.key == pygame.K_RIGHT:
+                x_change = 2
+            if event.key == pygame.K_LEFT:
+                x_change = -2
+        if event.type == pygame. KEYUP:
+            if event.key == pygame.K_RIGHT:
+                x_change = 0
+            if event.key == pygame.K_LEFT:
+                x_change = 0
+
+# Set properties of the hurdles like score, collision, and infinite spanning
+    for i in range(len(hurdles)):
+        if active:
+            hurdles[i] -= hurdle_speed
+            if hurdles[i] < -20:
+                hurdles[i] = random.randint(770,970)
+                score += 1
+            if player.colliderect(hurdle0) or player.colliderect(hurdle1) or player.colliderect(hurdle2):
+                active = False
+
+# Set the x dimensions so the player doesn't go off the screen
+    if 0 <= player_x <= 770:
+        player_x += x_change
+    if player_x < 0:
+        player_x = 0
+    if player_x > 770:
+        player_x = 770
+
+# Set the y dimensions for the gravity.
+    if y_change > 0 or player_y < 350:
+        player_y -= y_change
+        y_change -= gravity
+    if player_y > 350:
+        player_y = 350
+    if player_y == 350 and y_change < 0:
+        y_change = 0
+
+    pygame.display.flip()
+pygame.quit()
